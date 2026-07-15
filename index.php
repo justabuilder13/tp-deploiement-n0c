@@ -32,8 +32,8 @@ $projets = [
     ]
 ];
 
-$contactEmail = "justin@exemple.com";
-$github = "https://github.com/ton-username";
+$contactEmail = "justinlach@icloud.com";
+$github = "https://github.com/justabuilder13";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
