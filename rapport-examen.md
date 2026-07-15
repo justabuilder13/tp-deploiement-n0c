@@ -1,9 +1,3 @@
-# Documentation de déploiement sur n0c - Examen final EDW2
-
-**Étudiant :** Justin Lachapelle-Lévesque
-**Cours :** Environnement de Développement Web 2
-**Date :** 15 juillet 2026
-
 ## Projet
 
 Portfolio brouillon personnel en PHP (variables, tableaux, boucles `foreach`, `htmlspecialchars`),
@@ -59,7 +53,7 @@ Connexion SSH au serveur, puis clonage du dépôt directement dans le
 répertoire racine du sous-domaine :
 
 ```bash
-ssh [numéro_compte_n0c]@node28-ca.n0c.com -p 5022
+ssh ssh [numéro_compte_n0c]@[serveur].n0c.com -p 5022
 cd ~/examen-deploiement
 git clone https://github.com/justabuilder13/tp-deploiement-n0c.git .
 ```
