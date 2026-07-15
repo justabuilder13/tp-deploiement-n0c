@@ -1,0 +1,307 @@
+/* ============================================
+   Portfolio — Justin Lachapelle-Lévesque
+   Palette : papier technique + cobalt
+   ============================================ */
+
+:root {
+  --fond: #f5f6f2;
+  --encre: #16181c;
+  --gris: #5b5f66;
+  --cobalt: #2743f0;
+  --cobalt-doux: #e4e8ff;
+  --bordure: #d8dad2;
+  --blanc: #ffffff;
+  --police-titre: "Archivo", sans-serif;
+  --police-mono: "IBM Plex Mono", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--police-titre);
+  background: var(--fond);
+  color: var(--encre);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- En-tête ---------- */
+
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.logo {
+  font-family: var(--police-mono);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+}
+
+.curseur {
+  color: var(--cobalt);
+  animation: clignote 1.1s steps(2) infinite;
+}
+
+@keyframes clignote {
+  50% { opacity: 0; }
+}
+
+.statut {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--police-mono);
+  font-size: 0.78rem;
+  color: var(--gris);
+}
+
+.point {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1fa860;
+}
+
+/* ---------- Structure ---------- */
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 96px 0 72px;
+}
+
+.ligne-code {
+  font-family: var(--police-mono);
+  font-size: 0.9rem;
+  color: var(--gris);
+  margin-bottom: 20px;
+}
+
+.ligne-code .valeur {
+  color: var(--cobalt);
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.accent {
+  color: var(--cobalt);
+}
+
+.hero-sous {
+  font-size: 1.1rem;
+  color: var(--gris);
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.bouton {
+  display: inline-block;
+  padding: 13px 26px;
+  background: var(--encre);
+  color: var(--blanc);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.bouton:hover {
+  background: var(--cobalt);
+  transform: translateY(-2px);
+}
+
+.bouton--ligne {
+  background: transparent;
+  color: var(--encre);
+  border: 1.5px solid var(--encre);
+}
+
+.bouton--ligne:hover {
+  background: transparent;
+  color: var(--cobalt);
+  border-color: var(--cobalt);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: 56px 0;
+  border-top: 1px solid var(--bordure);
+}
+
+.section-titre {
+  font-family: var(--police-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cobalt);
+  margin-bottom: 32px;
+}
+
+/* ---------- Compétences ---------- */
+
+.grille-competences {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.grille-competences li {
+  font-family: var(--police-mono);
+  font-size: 0.88rem;
+  padding: 14px 18px;
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: 6px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.grille-competences li:hover {
+  border-color: var(--cobalt);
+  color: var(--cobalt);
+}
+
+/* ---------- Projets ---------- */
+
+.grille-projets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.carte-projet {
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  border-radius: 10px;
+  padding: 28px 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.carte-projet:hover {
+  transform: translateY(-4px);
+  border-color: var(--cobalt);
+  box-shadow: 0 12px 28px rgba(39, 67, 240, 0.1);
+}
+
+.carte-type {
+  display: inline-block;
+  font-family: var(--police-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cobalt);
+  background: var(--cobalt-doux);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.carte-projet h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.carte-description {
+  font-size: 0.92rem;
+  color: var(--gris);
+}
+
+/* ---------- Contact ---------- */
+
+.contact-texte {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.contact-texte a {
+  color: var(--cobalt);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--cobalt-doux);
+  transition: border-color 0.2s ease;
+}
+
+.contact-texte a:hover {
+  border-color: var(--cobalt);
+}
+
+/* ---------- Pied de page ---------- */
+
+.pied {
+  border-top: 1px solid var(--bordure);
+  padding: 28px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pied-note {
+  font-family: var(--police-mono);
+  font-size: 0.75rem;
+  color: var(--gris);
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  .page {
+    padding: 0 20px;
+  }
+
+  .hero {
+    padding: 64px 0 48px;
+  }
+
+  .entete,
+  .pied {
+    padding: 16px 20px;
+  }
+
+  .statut {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .curseur {
+    animation: none;
+  }
+
+  .bouton,
+  .carte-projet {
+    transition: none;
+  }
+}
